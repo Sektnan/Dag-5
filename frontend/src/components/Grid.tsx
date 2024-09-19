@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Student from "./Student";
+import type { Student as StudentProp } from "./types";
 
-const students = [
-    { id: "1", name: "Ola Normann" },
-    { id: "2", name: "Kari Normann" },
-];
+type GridProps = {
+    students: StudentProp[];
+};
 
-export default function Grid() {
+export default function Grid(props: GridProps) {
+    // props.students ?? []
+    const [students, setStudents] = useState(props.students ?? []);
+
     return (
         <article className="grid">
             {students.map((student) => (

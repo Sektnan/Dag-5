@@ -1,9 +1,5 @@
 import Avatar from "./avatar";
-
-type StudentProps = {
-  id: string;
-  name: string;
-};
+import { Student as StudentProps } from "./types";
 
 export default function Student(props: StudentProps) {
   const { id, name } = props;
